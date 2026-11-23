@@ -2,18 +2,15 @@ import asyncio
 import json
 import logging
 import os
+from aiohttp import web
 from aiogram import Bot, Dispatcher, F, types
 from aiogram.filters import CommandStart
-from aiogram.types import (
-    KeyboardButton,
-    ReplyKeyboardMarkup,
-    WebAppInfo,
-)
+from aiogram.types import KeyboardButton, ReplyKeyboardMarkup, WebAppInfo
 
-# Вставьте токен бота от @BotFather и публичный HTTPS-адрес вашего Mini App
-BOT_TOKEN = os.getenv("BOT_TOKEN", "8000000000:AAH_ВАШ_ТОКЕН_ОТ_BOTFATHER")
-WEBAPP_URL = os.getenv("WEBAPP_URL", "https://ваш-домен.ru/index.html")
-ADMIN_CHAT_ID = int(os.getenv("ADMIN_CHAT_ID", "123456789"))  # Ваш Telegram ID или ID группы поваров/менеджеров
+BOT_TOKEN = os.environ["BOT_TOKEN"]
+ADMIN_CHAT_ID = int(os.getenv("ADMIN_CHAT_ID", "0"))
+# Render автоматически подставляет публичный HTTPS-адрес сервиса в переменную RENDER_EXTERNAL_URL
+WEBAPP_URL = os.getenv("WEBAPP_URL") or os.getenv("RENDER_EXTERNAL_URL", "")
 
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token=BOT_TOKEN)
@@ -43,9 +40,8 @@ async def cmd_start(message: types.Message):
 
 @dp.message(F.web_app_data)
 async def handle_webapp_data(message: types.Message):
-    raw_data = message.web_app_data.data
     try:
-        data = json.loads(raw_data)
+        data = json.loads(message.web_app_data.data)
     except json.JSONDecodeError:
         await message.answer("Ошибка чтения данных заказа.")
         return
@@ -67,11 +63,10 @@ async def handle_webapp_data(message: types.Message):
         return
 
     if data.get("type") == "order":
-        items_lines = []
-        for idx, item in enumerate(data.get("items", []), start=1):
-            items_lines.append(
-                f"{idx}. {item['name']} × {item['qty']} шт. = {item['sum']} ₽"
-            )
+        items_lines = [
+            f"{idx}. {item['name']} × {item['qty']} шт. = {item['sum']} ₽"
+            for idx, item in enumerate(data.get("items", []), start=1)
+        ]
         items_block = "\n".join(items_lines)
 
         delivery_label = (
@@ -94,25 +89,44 @@ async def handle_webapp_data(message: types.Message):
             f"💰 **Итого к оплате: {data.get('total')} ₽**"
         )
 
-        # Подтверждение клиенту
         await message.answer(
             "✅ **Ваш заказ принят!** Оператор скоро свяжется с вами для подтверждения.\n\n"
             + receipt,
             parse_mode="Markdown",
         )
 
-        # Уведомление менеджеру / на кухню
         if ADMIN_CHAT_ID:
-            await bot.send_message(
-                ADMIN_CHAT_ID,
-                receipt,
-                parse_mode="Markdown",
-            )
+            await bot.send_message(ADMIN_CHAT_ID, receipt, parse_mode="Markdown")
 
 
-async def main():
-    await dp.start_polling(bot)
+async def serve_index(request: web.Request):
+    return web.FileResponse("index.html")
+
+
+async def healthcheck(request: web.Request):
+    return web.Response(text="OK")
+
+
+async def on_startup(app: web.Application):
+    await bot.delete_webhook(drop_pending_updates=True)
+    app["bot_task"] = asyncio.create_task(dp.start_polling(bot))
+
+
+async def on_cleanup(app: web.Application):
+    app["bot_task"].cancel()
+    await bot.session.close()
+
+
+def main():
+    app = web.Application()
+    app.router.add_get("/", serve_index)
+    app.router.add_get("/health", healthcheck)
+    app.on_startup.append(on_startup)
+    app.on_cleanup.append(on_cleanup)
+
+    port = int(os.environ.get("PORT", 10000))
+    web.run_app(app, host="0.0.0.0", port=port)
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
