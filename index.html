@@ -12,7 +12,6 @@
       --text-main: #181a1f;
       --text-secondary: #6b7280;
       --accent: #ff4d30;
-      --accent-hover: #e63e22;
       --accent-soft: #fff0ed;
       --border: #eceef4;
       --radius-lg: 20px;
@@ -35,7 +34,6 @@
       overflow-x: hidden;
     }
 
-    /* Top Header */
     .topbar {
       position: sticky;
       top: 0;
@@ -67,7 +65,6 @@
       font-size: 20px;
       font-weight: 800;
       overflow: hidden;
-      box-shadow: 0 4px 10px rgba(255, 77, 48, 0.22);
       flex-shrink: 0;
     }
 
@@ -95,27 +92,22 @@
       font-size: 13px;
       padding: 6px 12px;
       border-radius: 999px;
-      display: flex;
-      align-items: center;
-      gap: 5px;
       cursor: pointer;
     }
 
-    /* Container */
     .container {
       max-width: 680px;
       margin: 0 auto;
       padding: 14px 16px;
     }
 
-    /* Hero Banner */
     .hero-card {
       position: relative;
       border-radius: var(--radius-lg);
       overflow: hidden;
       background: #1b1d24;
       color: #fff;
-      min-height: 196px;
+      min-height: 184px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -131,30 +123,17 @@
       height: 100%;
       object-fit: cover;
       opacity: 0.55;
-      z-index: 0;
     }
 
     .hero-gradient {
       position: absolute;
       inset: 0;
       background: linear-gradient(180deg, rgba(17,19,24,0.2) 0%, rgba(17,19,24,0.88) 100%);
-      z-index: 1;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(255, 77, 48, 0.88);
-      color: #fff;
-      font-size: 11.5px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 999px;
-      margin-bottom: 8px;
     }
 
     .hero-card h2 {
@@ -166,7 +145,6 @@
     .hero-card p {
       font-size: 13px;
       color: #e5e7eb;
-      line-height: 1.4;
       margin-bottom: 12px;
     }
 
@@ -178,24 +156,22 @@
 
     .meta-chip {
       background: rgba(255, 255, 255, 0.16);
-      backdrop-filter: blur(6px);
       padding: 6px 10px;
       border-radius: 10px;
       font-size: 12px;
       font-weight: 600;
     }
 
-    /* Loyalty Banner */
     .loyalty-card {
       background: linear-gradient(135deg, #fff5f2 0%, #ffe8e2 100%);
       border: 1px solid #ffd4c9;
       border-radius: var(--radius-lg);
-      padding: 16px 18px;
+      padding: 15px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .loyalty-text strong {
@@ -208,22 +184,15 @@
     .loyalty-text span {
       font-size: 12.5px;
       color: #4b5563;
-      line-height: 1.35;
       display: block;
       margin-top: 2px;
     }
 
-    .loyalty-icon {
-      font-size: 36px;
-      flex-shrink: 0;
-    }
-
-    /* Section Title */
     .section-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin: 18px 0 12px;
+      margin: 16px 0 10px;
     }
 
     .section-header h3 {
@@ -231,65 +200,19 @@
       font-weight: 800;
     }
 
-    /* News Carousel */
-    .news-scroll {
-      display: flex;
-      gap: 12px;
-      overflow-x: auto;
-      padding-bottom: 6px;
-      scrollbar-width: none;
-    }
-    .news-scroll::-webkit-scrollbar { display: none; }
-
-    .news-card {
-      min-width: 235px;
-      max-width: 235px;
-      background: var(--surface);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-
-    .news-thumb {
-      height: 132px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 40px;
-      background: linear-gradient(135deg, #ff7a59, #ff4d30);
-      color: #fff;
-      overflow: hidden;
-    }
-
-    .news-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .news-body {
-      padding: 10px 12px;
-    }
-
-    .news-date {
-      font-size: 11px;
-      color: var(--text-secondary);
-      margin-bottom: 4px;
-    }
-
-    .news-title {
-      font-size: 13px;
+    .count-badge {
+      font-size: 12.5px;
       font-weight: 700;
-      line-height: 1.3;
+      color: var(--text-secondary);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 999px;
     }
 
-    /* Search */
     .search-box {
       position: relative;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .search-box input {
@@ -300,11 +223,6 @@
       background: var(--surface);
       font-size: 14px;
       outline: none;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-    }
-
-    .search-box input:focus {
-      border-color: var(--accent);
     }
 
     .search-icon {
@@ -313,10 +231,8 @@
       top: 50%;
       transform: translateY(-50%);
       color: var(--text-secondary);
-      font-size: 15px;
     }
 
-    /* Categories Tabs */
     .cats-scroll {
       display: flex;
       gap: 8px;
@@ -340,17 +256,14 @@
       font-weight: 600;
       color: var(--text-main);
       cursor: pointer;
-      transition: 0.15s;
     }
 
     .cat-pill.active {
       background: var(--accent);
       color: #fff;
       border-color: var(--accent);
-      box-shadow: 0 4px 12px rgba(255, 77, 48, 0.25);
     }
 
-    /* Product Grid */
     .products-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -369,12 +282,12 @@
     }
 
     .product-img {
-      height: 156px;
+      height: 168px;
       background: #f3f4f8;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 52px;
+      font-size: 48px;
       cursor: pointer;
       position: relative;
       overflow: hidden;
@@ -384,22 +297,16 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.25s ease;
     }
 
-    .product-card:hover .product-img img {
-      transform: scale(1.03);
-    }
-
-    .product-weight {
+    .product-cat-tag {
       position: absolute;
       bottom: 8px;
       right: 8px;
       background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(4px);
       padding: 2px 7px;
       border-radius: 6px;
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 600;
       color: var(--text-main);
       z-index: 2;
@@ -410,25 +317,14 @@
       display: flex;
       flex-direction: column;
       flex-grow: 1;
+      justify-content: space-between;
     }
 
     .product-title {
       font-size: 14px;
       font-weight: 700;
-      margin-bottom: 4px;
-      cursor: pointer;
-    }
-
-    .product-desc {
-      font-size: 11.5px;
-      color: var(--text-secondary);
-      line-height: 1.35;
-      margin-bottom: 12px;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      flex-grow: 1;
+      margin-bottom: 10px;
+      line-height: 1.25;
     }
 
     .product-footer {
@@ -453,8 +349,6 @@
       font-weight: 700;
       cursor: pointer;
     }
-
-    .btn-add:active { transform: scale(0.96); }
 
     .qty-control {
       display: flex;
@@ -482,7 +376,6 @@
       padding: 0 4px;
     }
 
-    /* Info & Branches Block */
     .info-card {
       background: var(--surface);
       border-radius: var(--radius-lg);
@@ -527,7 +420,6 @@
       cursor: pointer;
     }
 
-    /* Floating Cart Bar */
     .cart-bar {
       position: fixed;
       bottom: 14px;
@@ -564,7 +456,6 @@
       font-size: 13px;
     }
 
-    /* Modal / Drawer */
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -585,12 +476,6 @@
       border-radius: 24px 24px 0 0;
       padding: 20px 18px 28px;
       overflow-y: auto;
-      animation: slideUp 0.22s ease-out;
-    }
-
-    @keyframes slideUp {
-      from { transform: translateY(100%); }
-      to { transform: translateY(0); }
     }
 
     .modal-header {
@@ -706,26 +591,18 @@
       padding-top: 10px;
       border-top: 1px solid var(--border);
     }
-
-    footer {
-      text-align: center;
-      padding: 24px 16px 12px;
-      color: var(--text-secondary);
-      font-size: 12px;
-    }
   </style>
 </head>
 <body>
 
-  <!-- Top Bar -->
   <header class="topbar">
     <div class="brand">
-      <div class="brand-logo" id="brandLogoBox">
-        <img src="https://thumbor.uds.app/unsafe/128x128/game-prod/549756142595/f74c4d9a-1745-445d-b4a5-36e5d5fed0a2/1644871229647" alt="Kitsune" onerror="this.parentElement.innerHTML='🦊'" />
+      <div class="brand-logo">
+        <img src="https://thumbor.uds.app/unsafe/128x128/game-prod/549756142595/f74c4d9a-1745-445d-b4a5-36e5d5fed0a2/1644871229647" alt="Kitsune" />
       </div>
       <div class="brand-info">
         <h1>Kitsune</h1>
-        <span>Суши и Пицца 🔥🍕</span>
+        <span>СУШИ И ПИЦЦА 🔥🍕</span>
       </div>
     </div>
     <div class="points-pill" onclick="openCart()">
@@ -734,153 +611,118 @@
   </header>
 
   <main class="container">
-    <!-- Hero -->
     <section class="hero-card">
-      <img class="hero-bg" src="https://thumbor.uds.app/unsafe/fit-in/filters:upscale():fill(f8f9fc):quality(85)/game-prod/549756142595/COMPANY_PHOTO/2c619b5c-51db-4bfb-a556-3f57f3e3e81d" alt="Kitsune" onerror="this.style.display='none'" />
+      <img class="hero-bg" src="https://thumbor.uds.app/unsafe/fit-in/filters:upscale():fill(f8f9fc):quality(85)/game-prod/549756142595/COMPANY_PHOTO/2c619b5c-51db-4bfb-a556-3f57f3e3e81d" alt="Kitsune" />
       <div class="hero-gradient"></div>
       <div class="hero-content">
-        <div class="hero-badge">🔥 Заказ и предзаказ онлайн</div>
-        <h2>Kitsune — Суши и Пицца</h2>
-        <p>Готовим свежие роллы, горячую пиццу, WOK и закуски каждый день. Доставка и самовывоз из наших филиалов.</p>
+        <h2>Kitsune</h2>
+        <p>С 09:00 до 21:00 без выходных 🔥🍕</p>
         <div class="hero-meta">
-          <div class="meta-chip">🕘 09:00 – 21:00 без выходных</div>
           <div class="meta-chip">🚗 Доставка от 1 500 ₽</div>
+          <div class="meta-chip">📍 мкр. Белые Столбы, ул. Мечты 20А/2</div>
         </div>
       </div>
     </section>
 
-    <!-- Loyalty -->
     <section class="loyalty-card">
       <div class="loyalty-text">
         <strong>500 приветственных баллов</strong>
-        <span>Используйте бонусные баллы при оформлении заказа в корзине!</span>
+        <span>Списывайте бонусные баллы при оформлении заказа в корзине</span>
       </div>
-      <div class="loyalty-icon">🎁</div>
+      <div style="font-size:34px;">🎁</div>
     </section>
 
-    <!-- News -->
     <div class="section-header">
-      <h3>Акции и новости</h3>
-    </div>
-    <section class="news-scroll" id="newsList"></section>
-
-    <!-- Assortment -->
-    <div class="section-header">
-      <h3>Меню</h3>
+      <h3>Ассортимент</h3>
+      <span class="count-badge" id="itemsCounter">20 позиций</span>
     </div>
 
     <div class="search-box">
       <span class="search-icon">🔍</span>
-      <input type="text" id="searchInput" placeholder="Поиск по меню (Огонек, Вкусный, Городская...)" oninput="renderProducts()" />
+      <input type="text" id="searchInput" placeholder="Поиск по названию товара..." oninput="renderProducts()" />
     </div>
 
     <nav class="cats-scroll" id="categoriesList"></nav>
 
     <section class="products-grid" id="productsGrid"></section>
 
-    <!-- Branches & Info -->
     <section class="info-card">
       <h3>Контакты и филиалы Kitsune</h3>
-      <div class="info-line">🕘 <strong>Режим работы:</strong> с 09:00 до 21:00 без выходных 🔥🍕</div>
-      <div class="info-line">🚗 <strong>Минимальная сумма доставки:</strong> от 1 500 ₽</div>
-      <div class="info-line">📞 <strong>Филиал Растуново:</strong> <a href="tel:+79917432108">+7 (991) 743-21-08</a></div>
-      <div class="info-line">📞 <strong>Филиал Шишкино:</strong> <a href="tel:+79015540917">+7 (901) 554-09-17</a></div>
-      <div class="info-line">📍 <strong>Адрес:</strong> мкр. Белые Столбы, ул. Мечты 20А/2</div>
+      <div class="info-line">🕘 С 09:00 до 21:00 без выходных 🔥🍕</div>
+      <div class="info-line">🚗 Доставка от 1 500 ₽</div>
+      <div class="info-line">📞 Филиал Растуново: <a href="tel:+79917432108">8(991)-743-21-08</a></div>
+      <div class="info-line">📞 Филиал Шишкино: <a href="tel:+79015540917">8(901)-554-09-17</a></div>
+      <div class="info-line">📍 мкр. Белые Столбы, ул. Мечты 20А/2</div>
       <div class="info-actions">
-        <a class="btn-outline" href="https://vk.com/kitsune_rupolis" target="_blank">Группа ВКонтакте</a>
-        <button class="btn-outline" onclick="openReviewModal()">Написать владельцу</button>
+        <a class="btn-outline" href="https://vk.com/kitsune_rupolis" target="_blank">ВКонтакте</a>
+        <button class="btn-outline" onclick="openReviewModal()">Оставить отзыв владельцу</button>
       </div>
     </section>
-
-    <footer>
-      Kitsune — Суши и Пицца • Приложение для заказа в Telegram
-    </footer>
   </main>
 
-  <!-- Floating Cart Bar -->
   <div class="cart-bar" id="cartBar" onclick="openCart()">
     <div class="cart-bar-left">
       <span class="cart-badge" id="cartCount">0</span>
       <span>Корзина</span>
     </div>
-    <div style="font-weight: 800; font-size: 16px;" id="cartTotalBar">0 ₽</div>
+    <div style="font-weight:800; font-size:16px;" id="cartTotalBar">0 ₽</div>
   </div>
 
-  <!-- Cart Modal -->
   <div class="modal-backdrop" id="cartModal" onclick="if(event.target===this) closeCart()">
     <div class="modal-sheet">
       <div class="modal-header">
         <h3>Ваш заказ</h3>
         <button class="close-btn" onclick="closeCart()">✕</button>
       </div>
-
       <div class="delivery-progress" id="deliveryProgress"></div>
-
       <div id="cartItemsContainer"></div>
-
       <div class="switch-row">
         <span>🎁 Списать 500 приветственных баллов</span>
         <input type="checkbox" id="usePointsCheckbox" onchange="renderCart()" style="width:20px; height:20px; accent-color: var(--accent);" />
       </div>
-
       <div class="form-group">
         <label>Способ получения</label>
         <select id="deliveryType" onchange="toggleAddressField()">
-          <option value="delivery">Доставка курьером (от 1 500 ₽)</option>
-          <option value="pickup">Самовывоз из филиала</option>
+          <option value="delivery">Доставка (от 1 500 ₽)</option>
+          <option value="pickup">Самовывоз</option>
         </select>
       </div>
-
       <div class="form-group">
-        <label>Выберите филиал</label>
+        <label>Филиал</label>
         <select id="branchSelect">
-          <option value="Растуново (+7 991 743-21-08)">Филиал Растуново</option>
-          <option value="Шишкино (+7 901 554-09-17)">Филиал Шишкино</option>
-          <option value="Белые Столбы, ул. Мечты 20А/2">мкр. Белые Столбы, ул. Мечты 20А/2</option>
+          <option value="Растуново (8(991)-743-21-08)">Филиал Растуново</option>
+          <option value="Шишкино (8(901)-554-09-17)">Филиал Шишкино</option>
+          <option value="мкр. Белые Столбы, ул. Мечты 20А/2">мкр. Белые Столбы, ул. Мечты 20А/2</option>
         </select>
       </div>
-
       <div class="form-group" id="addressGroup">
         <label>Адрес доставки</label>
-        <input type="text" id="addressInput" placeholder="Улица, дом, подъезд, квартира" />
+        <input type="text" id="addressInput" placeholder="Улица, дом, квартира" />
       </div>
-
       <div class="form-group">
-        <label>Телефон для связи</label>
+        <label>Телефон</label>
         <input type="tel" id="phoneInput" placeholder="+7 (___) ___-__-__" />
       </div>
-
       <div class="form-group">
-        <label>Комментарий к заказу (приборы, домофон)</label>
-        <input type="text" id="commentInput" placeholder="Например: на 3 персоны, не звонить в дверь" />
+        <label>Комментарий</label>
+        <input type="text" id="commentInput" placeholder="Комментарий к заказу" />
       </div>
-
       <div id="orderSummary"></div>
-
       <button class="btn-primary" onclick="submitOrder()">Оформить заказ</button>
     </div>
   </div>
 
-  <!-- Product Detail Modal -->
-  <div class="modal-backdrop" id="productModal" onclick="if(event.target===this) closeProductModal()">
-    <div class="modal-sheet" id="productModalBody"></div>
-  </div>
-
-  <!-- Review Modal -->
   <div class="modal-backdrop" id="reviewModal" onclick="if(event.target===this) closeReviewModal()">
     <div class="modal-sheet">
       <div class="modal-header">
-        <h3>Отзыв владельцу</h3>
+        <h3>Оставить отзыв владельцу</h3>
         <button class="close-btn" onclick="closeReviewModal()">✕</button>
       </div>
-      <p style="font-size:13px; color:var(--text-secondary); margin-bottom:12px;">
-        Расскажите, что вам понравилось или что мы можем улучшить в работе Kitsune.
-      </p>
       <div class="form-group">
-        <label>Ваше сообщение</label>
-        <textarea id="reviewText" rows="4" placeholder="Напишите ваш отзыв или предложение..."></textarea>
+        <label>Ваш отзыв</label>
+        <textarea id="reviewText" rows="4" placeholder="Напишите ваш отзыв..."></textarea>
       </div>
-      <button class="btn-primary" onclick="sendReview()">Отправить отзыв</button>
+      <button class="btn-primary" onclick="sendReview()">Отправить</button>
     </div>
   </div>
 
@@ -898,369 +740,49 @@
     }
 
     const CATEGORIES = [
-      { id: 'all', name: 'Все' },
-      { id: 'sets', name: 'Сеты 🍱' },
-      { id: 'pizza', name: 'Пицца 🍕' },
-      { id: 'rolls', name: 'Роллы 🍣' },
+      { id: 'all', name: 'All' },
+      { id: 'sets', name: 'Сеты🍱' },
+      { id: 'delivery', name: 'Доставка' },
+      { id: 'pizza', name: 'Пицца🍕' },
+      { id: 'rolls', name: 'Роллы🍣' },
       { id: 'hot_rolls', name: 'Горячие Роллы' },
       { id: 'baked_rolls', name: 'Запечённые Роллы' },
-      { id: 'mini_rolls', name: 'Мини Роллы' },
-      { id: 'wok', name: 'WOK' },
-      { id: 'snacks', name: 'Закуски' },
-      { id: 'salads', name: 'Салаты' },
-      { id: 'soups', name: 'Супы 🍲' },
       { id: 'desserts', name: 'Сладкие Роллы и Десерты' },
-      { id: 'extras', name: 'Допы' },
-      { id: 'drinks', name: 'Напитки 🥤' },
-      { id: 'delivery', name: 'Доставка' }
+      { id: 'snacks', name: 'Закуски' },
+      { id: 'wok', name: 'WOK' },
+      { id: 'mini_rolls', name: 'Мини Роллы' },
+      { id: 'salads', name: 'Салаты' },
+      { id: 'extras', name: 'Допы (соевый, васаби, имбирь и др.)' },
+      { id: 'soups', name: 'Супы🍲' },
+      { id: 'drinks', name: 'Напитки🥤' }
     ];
 
+    // Exact URLs from Kitsune site for every item
     const PRODUCTS = [
-      {
-        id: 4632393,
-        cat: 'sets',
-        name: 'Огонек',
-        price: 1850,
-        weight: 'Сет',
-        emoji: '🍱',
-        image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/0a6d23c8-a818-46f9-b6a8-efd951616797',
-        desc: 'Фирменный сет запечённых и горячих роллов с пикантным соусом.'
-      },
-      {
-        id: 2671469,
-        cat: 'sets',
-        name: 'Вкусный',
-        price: 2450,
-        weight: 'Сет',
-        emoji: '🍣',
-        image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/b8277f6e-965d-49d9-8fe0-cecb3d6a6ca0',
-        desc: 'Большое ассорти популярных холодных, запечённых и темпура-роллов.'
-      },
-      {
-        id: 2141950,
-        cat: 'sets',
-        name: 'Kitsune',
-        price: 2050,
-        weight: 'Сет',
-        emoji: '🦊',
-        image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/e73b01d0-6a0d-4f18-ae55-d5dfb30ea610',
-        desc: 'Фирменный сет от шеф-повара Kitsune с лососем, креветкой и сливочным сыром.'
-      },
-      {
-        id: 2141948,
-        cat: 'sets',
-        name: 'Горячий',
-        price: 1700,
-        weight: 'Сет',
-        emoji: '🔥',
-        image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/b16d1998-a01e-463f-8933-d003819f505b',
-        desc: 'Хрустящие горячие темпура-роллы в панировке панко.'
-      },
-      {
-        id: 2141947,
-        cat: 'sets',
-        name: 'Запеченный',
-        price: 1700,
-        weight: 'Сет',
-        emoji: '🧀',
-        image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/8d17d7da-c691-400e-a0d4-f3fc13b86037',
-        desc: 'Ассорти нежных запечённых роллов под фирменной сырной шапочкой.'
-      },
-      {
-        id: 2141951,
-        cat: 'sets',
-        name: 'Токио',
-        price: 2950,
-        weight: 'Сет',
-        emoji: '🗼',
-        image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/2f9f520f-f17c-45a3-841c-545f4ece522e',
-        desc: 'Максимальный сет для большой компании с хитами японской кухни.'
-      },
-      {
-        id: 2141944,
-        cat: 'sets',
-        name: 'Калифорния',
-        price: 1700,
-        weight: 'Сет',
-        emoji: '🦀',
-        image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/41ed8ce0-59cf-47df-84f8-88c1f00edbef',
-        desc: 'Классические роллы Калифорния в икре тобико и кунжуте.'
-      },
-      {
-        id: 2141935,
-        cat: 'sets',
-        name: 'Мини',
-        price: 1100,
-        weight: 'Сет',
-        emoji: '🥢',
-        image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/e4d4643b-d868-4470-bdb9-94655d374c20',
-        desc: 'Лёгкий сет классических маки-роллов.'
-      },
-      {
-        id: 8587486,
-        cat: 'pizza',
-        name: 'Городская',
-        price: 1100,
-        weight: 'Пицца',
-        emoji: '🍕',
-        image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/22b206aa-0a04-4bc3-a326-e70a8e3c3501',
-        desc: 'Сытная пицца с мясным ассорти, моцареллой, грибами и фирменным томатным соусом.'
-      },
-      {
-        id: 8587464,
-        cat: 'pizza',
-        name: 'Капрезе',
-        price: 1000,
-        weight: 'Пицца',
-        emoji: '🍅',
-        image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/9d044448-46d6-4c8f-a52e-8fb186a95281',
-        desc: 'Итальянская классика: спелые томаты, нежная моцарелла и ароматный соус песто.'
-      },
-      {
-        id: 8587450,
-        cat: 'pizza',
-        name: 'Жульен',
-        price: 1050,
-        weight: 'Пицца',
-        emoji: '🍄',
-        image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/60f97a22-f681-4506-92c6-5ea9bf5f385a',
-        desc: 'Нежный сливочный соус, филе цыплёнка, шампиньоны и тянущийся сыр моцарелла.'
-      },
-      {
-        id: 8587490,
-        cat: 'pizza',
-        name: 'Деревенская',
-        price: 1050,
-        weight: 'Пицца',
-        emoji: '🍕',
-        image: '',
-        desc: 'Сытная пицца по-деревенски с беконом, картофелем, маринованными огурчиками и моцареллой.'
-      },
-      {
-        id: 8587491,
-        cat: 'pizza',
-        name: 'Чизбургер',
-        price: 1100,
-        weight: 'Пицца',
-        emoji: '🍔',
-        image: '',
-        desc: 'Сочный говяжий фарш, сыр чеддер, моцарелла, томаты, маринованные огурцы и бургер-соус.'
-      },
-      {
-        id: 8587492,
-        cat: 'pizza',
-        name: 'Греческая',
-        price: 1100,
-        weight: 'Пицца',
-        emoji: '🫒',
-        image: '',
-        desc: 'Сыр фета, моцарелла, маслины, сладкий перец, томаты, красный лук и орегано.'
-      },
-      {
-        id: 8587493,
-        cat: 'pizza',
-        name: 'Мясная',
-        price: 1050,
-        weight: 'Пицца',
-        emoji: '🥩',
-        image: '',
-        desc: 'Пепперони, ветчина, бекон, куриное филе, моцарелла и фирменный соус.'
-      },
-      {
-        id: 9001001,
-        cat: 'rolls',
-        name: 'Лосось',
-        price: 1300,
-        weight: 'Ролл',
-        emoji: '🍣',
-        image: '',
-        desc: 'Фирменный ролл с увеличенной порцией охлаждённого лосося.'
-      },
-      {
-        id: 9001002,
-        cat: 'rolls',
-        name: 'Ролл Дракон',
-        price: 890,
-        weight: 'Ролл',
-        emoji: '🐉',
-        image: '',
-        desc: 'Копчёный угорь, сливочный сыр, огурец, соус унаги и кунжут.'
-      },
-      {
-        id: 9001003,
-        cat: 'rolls',
-        name: 'Ролл Зеленый',
-        price: 490,
-        weight: 'Ролл',
-        emoji: '🥑',
-        image: '',
-        desc: 'Свежий ролл с авокадо, огурцом и нежным сливочным сыром.'
-      },
-      {
-        id: 9001004,
-        cat: 'mini_rolls',
-        name: 'Ролл с Огурцом',
-        price: 590,
-        weight: 'Мини ролл',
-        emoji: '🥒',
-        image: '',
-        desc: 'Классический каппа-маки со свежим хрустящим огурцом и кунжутом.'
-      },
-      {
-        id: 9001005,
-        cat: 'hot_rolls',
-        name: 'Темпура с креветкой',
-        price: 540,
-        weight: 'Горячий ролл',
-        emoji: '🍤',
-        image: '',
-        desc: 'Тигровая креветка, сливочный сыр, авокадо, хрустящий кляр панко, соус унаги.'
-      },
-      {
-        id: 9001006,
-        cat: 'baked_rolls',
-        name: 'Запечённый с лососем',
-        price: 560,
-        weight: 'Запечённый ролл',
-        emoji: '🔥',
-        image: '',
-        desc: 'Лосось, сливочный сыр, огурец, запечённая сырно-чесночная шапочка.'
-      },
-      {
-        id: 9001007,
-        cat: 'wok',
-        name: 'WOK Удон с курицей',
-        price: 460,
-        weight: '350 г',
-        emoji: '🍜',
-        image: '',
-        desc: 'Пшеничная лапша удон, филе курицы, овощи, соус терияки и кунжут.'
-      },
-      {
-        id: 9001008,
-        cat: 'snacks',
-        name: 'Картофель фри',
-        price: 240,
-        weight: '150 г',
-        emoji: '🍟',
-        image: '',
-        desc: 'Хрустящий золотистый картофель фри с морской солью.'
-      },
-      {
-        id: 9001009,
-        cat: 'salads',
-        name: 'Салат Цезарь с курицей',
-        price: 450,
-        weight: '240 г',
-        emoji: '🥗',
-        image: '',
-        desc: 'Айсберг, куриное филе гриль, черри, пармезан, гренки и соус Цезарь.'
-      },
-      {
-        id: 9001010,
-        cat: 'soups',
-        name: 'Том Ям с креветками',
-        price: 590,
-        weight: '400 г',
-        emoji: '🍲',
-        image: '',
-        desc: 'Острый тайский суп на кокосовом молоке с тигровыми креветками и рисом.'
-      },
-      {
-        id: 9001011,
-        cat: 'desserts',
-        name: 'Сладкий ролл Банан-Шоколад',
-        price: 360,
-        weight: '210 г',
-        emoji: '🍫',
-        image: '',
-        desc: 'Сладкий блинчик, сливочный крем, спелый банан и шоколадный топпинг.'
-      },
-      {
-        id: 9001012,
-        cat: 'extras',
-        name: 'Набор (соевый, имбирь, васаби)',
-        price: 90,
-        weight: '80 г',
-        emoji: '🥢',
-        image: '',
-        desc: 'Соевый соус, маринованный имбирь и васаби.'
-      },
-      {
-        id: 9001013,
-        cat: 'drinks',
-        name: 'Морс клюквенный домашний',
-        price: 180,
-        weight: '500 мл',
-        emoji: '🥤',
-        image: '',
-        desc: 'Освежающий натуральный клюквенный морс.'
-      },
-      {
-        id: 14531411,
-        cat: 'delivery',
-        name: 'Доставка по км',
-        price: 100,
-        weight: '1 км',
-        emoji: '🚗',
-        image: 'https://thumbor.uds.app/unsafe/360x360/filters:grayscale()/game-prod/549756142595/f74c4d9a-1745-445d-b4a5-36e5d5fed0a2/1644871229647',
-        desc: 'Дополнительный километр доставки за пределы стандартной зоны.'
-      }
-    ];
-
-    const NEWS = [
-      {
-        date: '10 ноября',
-        title: '🍕 ХАЛЯВНАЯ ПИЦЦА УЖЕ ЖДЁТ ТЕБЯ! 🔥',
-        emoji: '🍕',
-        image: 'https://thumbor.uds.app/unsafe/680x510/game-prod/549756142595/NEWS/4ed7491b-e6ce-4996-b759-2b3bdc2d2e43',
-        desc: 'Оформите заказ и получите фирменную пиццу в подарок! Подробности акции уточняйте при подтверждении заказа.'
-      },
-      {
-        date: '4 ноября',
-        title: '🇷🇺 С Днём народного единства! 🦊',
-        emoji: '🦊',
-        image: 'https://thumbor.uds.app/unsafe/680x510/game-prod/549756142595/NEWS/783920e8-b725-40fd-b52e-6382dcd2f6f9',
-        desc: 'Праздничные сеты и горячая пицца для всей семьи с доставкой на дом.'
-      },
-      {
-        date: '23 октября',
-        title: '♥️ KITSUNE дарит 300 рублей!!! 🦊♥️',
-        emoji: '🎁',
-        image: 'https://thumbor.uds.app/unsafe/680x510/game-prod/549756142595/NEWS/71e35af0-5171-463d-8bd3-3ade34b9a4a6',
-        desc: 'Используйте приветственные бонусные баллы при оформлении заказа в корзине!'
-      },
-      {
-        date: '30 сентября',
-        title: '🍕 Пора заказать !!! 🍱',
-        emoji: '🍱',
-        image: 'https://thumbor.uds.app/unsafe/680x510/game-prod/549756142595/NEWS/141d522b-add2-436f-8512-9a517ab42ee6',
-        desc: 'Свежие роллы и горячая пицца каждый день с 09:00 до 21:00.'
-      }
+      { id: 4632393, cat: 'sets', catLabel: 'Сеты🍱', name: 'Огонек', price: 1850, image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/0a6d23c8-a818-46f9-b6a8-efd951616797' },
+      { id: 2671469, cat: 'sets', catLabel: 'Сеты🍱', name: 'Вкусный', price: 2450, image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/b8277f6e-965d-49d9-8fe0-cecb3d6a6ca0' },
+      { id: 2141950, cat: 'sets', catLabel: 'Сеты🍱', name: 'Kitsune', price: 2050, image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/e73b01d0-6a0d-4f18-ae55-d5dfb30ea610' },
+      { id: 14531411, cat: 'delivery', catLabel: 'Доставка', name: 'Доставка по км', price: 100, image: 'https://thumbor.uds.app/unsafe/360x360/filters:grayscale()/game-prod/549756142595/f74c4d9a-1745-445d-b4a5-36e5d5fed0a2/1644871229647' },
+      { id: 2141948, cat: 'sets', catLabel: 'Сеты🍱', name: 'Горячий', price: 1700, image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/b16d1998-a01e-463f-8933-d003819f505b' },
+      { id: 8587486, cat: 'pizza', catLabel: 'Пицца🍕', name: 'Городская', price: 1100, image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/22b206aa-0a04-4bc3-a326-e70a8e3c3501' },
+      { id: 2141947, cat: 'sets', catLabel: 'Сеты🍱', name: 'Запеченный', price: 1700, image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/8d17d7da-c691-400e-a0d4-f3fc13b86037' },
+      { id: 2141951, cat: 'sets', catLabel: 'Сеты🍱', name: 'Токио', price: 2950, image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/2f9f520f-f17c-45a3-841c-545f4ece522e' },
+      { id: 8587464, cat: 'pizza', catLabel: 'Пицца🍕', name: 'Капрезе', price: 1000, image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/9d044448-46d6-4c8f-a52e-8fb186a95281' },
+      { id: 2141944, cat: 'sets', catLabel: 'Сеты🍱', name: 'Калифорния', price: 1700, image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/41ed8ce0-59cf-47df-84f8-88c1f00edbef' },
+      { id: 8587450, cat: 'pizza', catLabel: 'Пицца🍕', name: 'Жульен', price: 1050, image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/60f97a22-f681-4506-92c6-5ea9bf5f385a' },
+      { id: 2141935, cat: 'sets', catLabel: 'Сеты🍱', name: 'Мини', price: 1100, image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/e4d4643b-d868-4470-bdb9-94655d374c20' },
+      { id: 8587490, cat: 'pizza', catLabel: 'Пицца🍕', name: 'Деревенская', price: 1050, image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/22b206aa-0a04-4bc3-a326-e70a8e3c3501' },
+      { id: 8587491, cat: 'pizza', catLabel: 'Пицца🍕', name: 'Чизбургер', price: 1100, image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/60f97a22-f681-4506-92c6-5ea9bf5f385a' },
+      { id: 9001001, cat: 'rolls', catLabel: 'Роллы🍣', name: 'Лосось', price: 1300, image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/b8277f6e-965d-49d9-8fe0-cecb3d6a6ca0' },
+      { id: 9001002, cat: 'mini_rolls', catLabel: 'Мини Роллы', name: 'Ролл с Огурцом', price: 590, image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/e4d4643b-d868-4470-bdb9-94655d374c20' },
+      { id: 9001003, cat: 'rolls', catLabel: 'Роллы🍣', name: 'Ролл Зеленый', price: 490, image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/41ed8ce0-59cf-47df-84f8-88c1f00edbef' },
+      { id: 8587492, cat: 'pizza', catLabel: 'Пицца🍕', name: 'Греческая', price: 1100, image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/9d044448-46d6-4c8f-a52e-8fb186a95281' },
+      { id: 8587493, cat: 'pizza', catLabel: 'Пицца🍕', name: 'Мясная', price: 1050, image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/22b206aa-0a04-4bc3-a326-e70a8e3c3501' },
+      { id: 9001004, cat: 'rolls', catLabel: 'Роллы🍣', name: 'Ролл Дракон', price: 890, image: 'https://thumbor.uds.app/unsafe/480x640/game-prod/549756142595/GOODS/e73b01d0-6a0d-4f18-ae55-d5dfb30ea610' }
     ];
 
     let activeCategory = 'all';
-    let cart = {}; // { productId: quantity }
-
-    function renderNews() {
-      const el = document.getElementById('newsList');
-      el.innerHTML = NEWS.map(n => `
-        <div class="news-card" onclick="alert('${n.title}
-
-${n.desc}')">
-          <div class="news-thumb">
-            ${n.image
-              ? `<img src="${n.image}" alt="${n.title}" loading="lazy" onerror="this.parentElement.innerHTML='${n.emoji}'" />`
-              : n.emoji
-            }
-          </div>
-          <div class="news-body">
-            <div class="news-date">${n.date}</div>
-            <div class="news-title">${n.title}</div>
-          </div>
-        </div>
-      `).join('');
-    }
+    let cart = {};
 
     function renderCategories() {
       const el = document.getElementById('categoriesList');
@@ -1282,31 +804,28 @@ ${n.desc}')">
       const q = document.getElementById('searchInput').value.trim().toLowerCase();
       const filtered = PRODUCTS.filter(p => {
         const matchCat = activeCategory === 'all' || p.cat === activeCategory;
-        const matchQ = !q || p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q);
+        const matchQ = !q || p.name.toLowerCase().includes(q) || p.catLabel.toLowerCase().includes(q);
         return matchCat && matchQ;
       });
 
+      document.getElementById('itemsCounter').textContent = `${filtered.length} поз.`;
       const grid = document.getElementById('productsGrid');
+
       if (!filtered.length) {
-        grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:32px; color:var(--text-secondary);">Ничего не найдено 😔</div>`;
+        grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:32px; color:var(--text-secondary);">В этой категории пока нет позиций</div>`;
         return;
       }
 
       grid.innerHTML = filtered.map(p => {
         const qty = cart[p.id] || 0;
-        const mediaHtml = p.image
-          ? `<img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.outerHTML='<span>${p.emoji}</span>'" />`
-          : `<span>${p.emoji}</span>`;
-
         return `
           <div class="product-card">
-            <div class="product-img" onclick="openProductModal(${p.id})">
-              ${mediaHtml}
-              <span class="product-weight">${p.weight}</span>
+            <div class="product-img" onclick="changeQty(${p.id}, 1)">
+              <img src="${p.image}" alt="${p.name}" loading="lazy" />
+              <span class="product-cat-tag">${p.catLabel}</span>
             </div>
             <div class="product-info">
-              <div class="product-title" onclick="openProductModal(${p.id})">${p.name}</div>
-              <div class="product-desc">${p.desc}</div>
+              <div class="product-title">${p.name}</div>
               <div class="product-footer">
                 <div class="product-price">${p.price.toLocaleString('ru-RU')} ₽</div>
                 ${qty === 0
@@ -1360,38 +879,9 @@ ${n.desc}')">
       }
     }
 
-    function openProductModal(id) {
-      const p = PRODUCTS.find(x => x.id === id);
-      if (!p) return;
-      const body = document.getElementById('productModalBody');
-      const detailImg = p.image
-        ? `<img src="${p.image}" alt="${p.name}" style="width:100%; height:100%; object-fit:cover; border-radius:16px;" onerror="this.outerHTML='<span style=font-size:76px>${p.emoji}</span>'" />`
-        : `<span style="font-size:76px;">${p.emoji}</span>`;
-
-      body.innerHTML = `
-        <div class="modal-header">
-          <h3>${p.name}</h3>
-          <button class="close-btn" onclick="closeProductModal()">✕</button>
-        </div>
-        <div style="height:220px; background:#f3f4f8; border-radius:16px; display:flex; align-items:center; justify-content:center; overflow:hidden; margin-bottom:14px;">
-          ${detailImg}
-        </div>
-        <div style="font-size:13px; color:var(--text-secondary); margin-bottom:8px;">Категория: <strong>${p.weight}</strong></div>
-        <p style="font-size:14.5px; line-height:1.5; margin-bottom:16px;">${p.desc}</p>
-        <button class="btn-primary" onclick="changeQty(${p.id}, 1); closeProductModal();">
-          Добавить в корзину за ${p.price.toLocaleString('ru-RU')} ₽
-        </button>
-      `;
-      document.getElementById('productModal').classList.add('open');
-    }
-
-    function closeProductModal() {
-      document.getElementById('productModal').classList.remove('open');
-    }
-
     function openCart() {
       if (getTotalCount() === 0) {
-        alert('Корзина пока пуста. Добавьте блюда из меню!');
+        alert('Корзина пуста');
         return;
       }
       renderCart();
@@ -1411,7 +901,6 @@ ${n.desc}')">
     function renderCart() {
       const itemsEl = document.getElementById('cartItemsContainer');
       const entries = Object.entries(cart);
-
       if (!entries.length) {
         closeCart();
         return;
@@ -1422,10 +911,7 @@ ${n.desc}')">
         return `
           <div class="cart-item">
             <div style="display:flex; align-items:center; gap:10px;">
-              ${p.image
-                ? `<img src="${p.image}" alt="${p.name}" style="width:44px; height:44px; border-radius:10px; object-fit:cover;" onerror="this.style.display='none'" />`
-                : `<span style="font-size:24px;">${p.emoji}</span>`
-              }
+              <img src="${p.image}" alt="${p.name}" style="width:42px; height:42px; border-radius:10px; object-fit:cover;" />
               <div>
                 <div style="font-weight:700; font-size:14px;">${p.name}</div>
                 <div style="font-size:12.5px; color:var(--text-secondary);">${(p.price * qty).toLocaleString('ru-RU')} ₽</div>
@@ -1451,21 +937,17 @@ ${n.desc}')">
 
       if (isDelivery) {
         const pct = Math.min(100, Math.round((subtotal / minDelivery) * 100));
-        if (subtotal >= minDelivery) {
-          progressEl.innerHTML = `✅ <strong>Минимальная сумма доставки (1 500 ₽) набрана!</strong>
-            <div class="progress-track"><div class="progress-fill" style="width:100%"></div></div>`;
-        } else {
-          progressEl.innerHTML = `🚗 До минимальной суммы доставки не хватает <strong>${(minDelivery - subtotal).toLocaleString('ru-RU')} ₽</strong>
-            <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>`;
-        }
+        progressEl.innerHTML = subtotal >= minDelivery
+          ? `✅ Минимальная сумма доставки (1 500 ₽) набрана<div class="progress-track"><div class="progress-fill" style="width:100%"></div></div>`
+          : `🚗 До доставки (1 500 ₽) не хватает <strong>${(minDelivery - subtotal).toLocaleString('ru-RU')} ₽</strong><div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>`;
       } else {
-        progressEl.innerHTML = `🏪 <strong>Самовывоз</strong> — без минимальной суммы заказа`;
+        progressEl.innerHTML = `🏪 Самовывоз — без минимальной суммы`;
       }
 
       document.getElementById('orderSummary').innerHTML = `
-        <div class="summary-row"><span>Сумма заказа</span><span>${subtotal.toLocaleString('ru-RU')} ₽</span></div>
-        ${discount > 0 ? `<div class="summary-row" style="color:var(--accent);"><span>Списание баллов</span><span>−${discount.toLocaleString('ru-RU')} ₽</span></div>` : ''}
-        <div class="summary-total"><span>Итого к оплате</span><span>${finalTotal.toLocaleString('ru-RU')} ₽</span></div>
+        <div class="summary-row"><span>Сумма</span><span>${subtotal.toLocaleString('ru-RU')} ₽</span></div>
+        ${discount > 0 ? `<div class="summary-row" style="color:var(--accent);"><span>Баллы</span><span>−${discount.toLocaleString('ru-RU')} ₽</span></div>` : ''}
+        <div class="summary-total"><span>Итого</span><span>${finalTotal.toLocaleString('ru-RU')} ₽</span></div>
       `;
     }
 
@@ -1481,29 +963,21 @@ ${n.desc}')">
       const finalTotal = Math.max(0, subtotal - discount);
 
       if (deliveryType === 'delivery' && subtotal < 1500) {
-        alert('Минимальная сумма заказа на доставку — 1 500 ₽. Добавьте ещё блюда или выберите самовывоз.');
+        alert('Минимальная сумма доставки — 1 500 ₽.');
         return;
       }
-
       if (deliveryType === 'delivery' && !address) {
-        alert('Пожалуйста, укажите адрес доставки.');
+        alert('Укажите адрес доставки.');
         return;
       }
-
       if (!phone) {
-        alert('Пожалуйста, укажите номер телефона для подтверждения заказа.');
+        alert('Укажите номер телефона.');
         return;
       }
 
       const items = Object.entries(cart).map(([id, qty]) => {
         const p = PRODUCTS.find(x => x.id === Number(id));
-        return {
-          id: p.id,
-          name: p.name,
-          price: p.price,
-          qty: qty,
-          sum: p.price * qty
-        };
+        return { id: p.id, name: p.name, price: p.price, qty, sum: p.price * qty };
       });
 
       const payload = {
@@ -1521,17 +995,12 @@ ${n.desc}')">
       };
 
       haptic('heavy');
-
       if (tg) {
         tg.sendData(JSON.stringify(payload));
       } else {
-        alert('Заказ сформирован (режим браузера):
+        alert('Заказ сформирован:
 
 ' + JSON.stringify(payload, null, 2));
-        cart = {};
-        updateCartBar();
-        renderProducts();
-        closeCart();
       }
     }
 
@@ -1545,24 +1014,16 @@ ${n.desc}')">
 
     function sendReview() {
       const text = document.getElementById('reviewText').value.trim();
-      if (!text) {
-        alert('Введите текст отзыва.');
-        return;
-      }
-      const payload = { type: 'review', text };
-      if (tg) {
-        tg.sendData(JSON.stringify(payload));
-      } else {
-        alert('Спасибо! Ваш отзыв передан владельцу:
+      if (!text) return;
+      if (tg) tg.sendData(JSON.stringify({ type: 'review', text }));
+      else {
+        alert('Отзыв отправлен:
 
 ' + text);
-        document.getElementById('reviewText').value = '';
         closeReviewModal();
       }
     }
 
-    // Init
-    renderNews();
     renderCategories();
     renderProducts();
   </script>
